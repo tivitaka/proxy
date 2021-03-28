@@ -31,7 +31,7 @@ EOF
 }
 
 gen_data() {
-    seq $FIRST_PORT $LAST_PORT | while read port; do
+    seq 10000 10100 | while read port; do
         echo "usr$(random)/pass$(random)/$IP4/$port/$(gen64 $IP6)"
     done
 }
@@ -55,9 +55,6 @@ WORKDATA="${WORKDIR}/data.txt"
 IP4=$(curl -4 -s icanhazip.com)
 IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
-COUNT=100
-FIRST_PORT=10000
-LAST_PORT=$(($FIRST_PORT + $COUNT))
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
