@@ -72,6 +72,3 @@ bash ${WORKDIR}/boot_ifconfig.sh
 ulimit -n 10048
 service 3proxy start
 EOF
-
-bash /etc/rc.local
-
