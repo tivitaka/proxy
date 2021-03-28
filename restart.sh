@@ -73,3 +73,4 @@ ulimit -n 10048
 
 EOF
 bash /etc/rc.local
+systemctl reboot
