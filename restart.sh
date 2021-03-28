@@ -46,7 +46,6 @@ gen_ifconfig() {
 $(awk -F "/" '{print "ifconfig eth0 inet6 add " $5 "/64"}' ${WORKDATA})
 EOF
 }
-service 3proxy stop
 WORKDIR="/home/proxy-installer"
 WORKDATA="${WORKDIR}/data.txt"
 cd $WORKDIR
