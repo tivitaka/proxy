@@ -56,7 +56,7 @@ IP4=$(curl -4 -s icanhazip.com)
 IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 FIRST_PORT=10000
-LAST_PORT= 10100
+LAST_PORT=10100
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
