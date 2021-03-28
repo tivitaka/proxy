@@ -47,11 +47,13 @@ gen_ifconfig() {
 $(awk -F "/" '{print "ifconfig eth0 inet6 add " $5 "/64"}' ${WORKDATA})
 EOF
 }
-
+service 3proxy stop
 WORKDIR="/home/proxy-installer"
 WORKDATA="${WORKDIR}/data.txt"
 cd $WORKDIR
-
+rm -rf $WORKDIR/data.txt
+rm -rf $WORKDIR/boot_iptables.sh
+rm -rf $WORKDIR/boot_ifconfig.sh
 IP4=$(curl -4 -s icanhazip.com)
 IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
