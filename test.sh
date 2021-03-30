@@ -30,6 +30,8 @@ gen_3proxy() {
 daemon
 maxconn 1000
 nscache 65536
+nserver 8.8.8.8
+nserver 8.8.4.4
 timeouts 1 5 30 60 180 1800 15 60
 setgid 65535
 setuid 65535
