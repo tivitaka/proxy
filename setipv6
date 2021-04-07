@@ -1,4 +1,5 @@
-setIpv6Psychz(){
+#!/bin/sh
+setIpv6Psychz() {
 yum install wget -y
 sed '/IPV6INIT/d' /etc/sysconfig/network-scripts/ifcfg-eth1
 z="
