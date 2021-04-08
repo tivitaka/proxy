@@ -74,17 +74,8 @@ mkdir $WORKDIR && cd $_
 IP4='107.160.1.82'
 IP6='2604:6600:8:b'
 
-echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
-COUNT=500
-echo "How many proxy do you want to create? Example 500"
-read COUNT
-
-
 FIRST_PORT=10000
-echo "Port start from ? (Default 10000)"
-read FIRST_PORT
-
-LAST_PORT=$(($FIRST_PORT + $COUNT))
+LAST_PORT=10500
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
@@ -104,4 +95,3 @@ bash /etc/rc.local
 
 gen_proxy_file_for_user
 
-upload_proxy
